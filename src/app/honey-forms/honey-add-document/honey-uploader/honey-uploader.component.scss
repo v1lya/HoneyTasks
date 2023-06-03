@@ -1,0 +1,29 @@
+.image-uploader {
+  display: flex;
+  gap: 20px;
+  border: none;
+
+  &__image-file {
+    width: 25px;
+    height: 25px;
+  }
+
+  input {
+    border: none;
+    text-overflow: ellipsis;
+    padding-left: 0;
+    background-color: transparent;
+  }
+
+  p-button {
+    cursor: pointer;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  //::ng-deep span.p-button-text.p-clickable {
+  //  display: none;
+  //}
+}

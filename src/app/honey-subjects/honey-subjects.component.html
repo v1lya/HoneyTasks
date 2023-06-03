@@ -1,0 +1,16 @@
+<div class="honey-subjects">
+  <app-honey-buttons></app-honey-buttons>
+  <app-honey-listener></app-honey-listener>
+  <p-button [label]="'History'" (onClick)="toggleHistoryDialog(true)"></p-button>
+</div>
+
+<ng-container *ngIf="isHistoryDialogOpened">
+  <app-honey-dialog [visible]="isHistoryDialogOpened" [headerText]="'Logs history'" (dialogClosed)="toggleHistoryDialog(false)">
+    <ng-container *ngTemplateOutlet="uploader"></ng-container>
+  </app-honey-dialog>
+
+  <ng-template #uploader>
+    <app-honey-history></app-honey-history>
+  </ng-template>
+</ng-container>
+

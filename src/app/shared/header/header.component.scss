@@ -1,0 +1,28 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  &__brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__link {
+      padding: 0 1.5rem;
+      //color: white;
+      font-size: 1.5em;
+      text-decoration: none;
+    }
+  }
+
+  &__items {
+    display: flex;
+    margin-left: auto;
+
+    &__item {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+  }
+}

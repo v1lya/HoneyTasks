@@ -1,0 +1,5 @@
+<div class="honey-buttons">
+  <div *ngFor="let btn of buttonsList">
+    <p-button [label]="btn.label" (onClick)="handleButtonClick(btn.value)"></p-button>
+  </div>
+</div>
