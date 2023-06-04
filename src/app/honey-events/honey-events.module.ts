@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HoneySubjectsComponent } from './honey-subjects.component';
+import { HoneyEventsComponent } from './honey-events.component';
 import { HoneyButtonsComponent } from './honey-buttons/honey-buttons.component';
 import { HoneyListenerComponent } from './honey-listener/honey-listener.component';
 import { HoneyHistoryComponent } from './honey-history/honey-history.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { HoneySubjectsRoutingModule } from './honey-subjects-routing.module';
+import { HoneyEventsRoutingModule } from './honey-events-routing.module';
+import { HoneyButtonComponent } from './honey-buttons/honey-button/honey-button.component';
 
 @NgModule({
   declarations: [
-    HoneySubjectsComponent,
+    HoneyEventsComponent,
     HoneyButtonsComponent,
     HoneyListenerComponent,
     HoneyHistoryComponent,
+    HoneyButtonComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule,
-    HoneySubjectsRoutingModule,
+    HoneyEventsRoutingModule,
   ],
 })
-export class HoneySubjectsModule {}
+export class HoneyEventsModule {}

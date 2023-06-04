@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { IDoc, IImage } from './models';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-honey-forms',
@@ -8,9 +7,9 @@ import { IDoc, IImage } from './models';
 })
 export class HoneyFormsComponent {
   isAddDocumentDialogOpened = false;
-  docsList: IDoc[] = [];
 
-  constructor() {}
+  constructor() {
+  }
 
   toggleAddDocumentDialog(event: boolean) {
     this.isAddDocumentDialogOpened = event;

@@ -6,15 +6,15 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: () =>
-      import('./honey-subjects/honey-subjects.module').then(
-        (m) => m.HoneySubjectsModule
+      import('./honey-events/honey-events.module').then(
+        (m) => m.HoneyEventsModule
       ),
   },
   {
     path: 'events',
     loadChildren: () =>
-      import('./honey-subjects/honey-subjects.module').then(
-        (m) => m.HoneySubjectsModule
+      import('./honey-events/honey-events.module').then(
+        (m) => m.HoneyEventsModule
       ),
   },
   {

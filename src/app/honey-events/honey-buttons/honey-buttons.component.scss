@@ -1,9 +1,11 @@
 .honey-buttons {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 50px;
+  flex-wrap: wrap;
+  width: 320px;
+  gap: 40px;
+  padding: 40px 40px 0 40px;
   margin: 0 50px;
   border: 1px solid black;
 }

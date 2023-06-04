@@ -1,6 +1,6 @@
-<div class="honey-subjects">
+<div class="honey-events">
   <app-honey-buttons></app-honey-buttons>
-  <app-honey-listener></app-honey-listener>
+  <app-honey-listener [isHistoryDialogOpened]="isHistoryDialogOpened"></app-honey-listener>
   <p-button
     [label]="'History'"
     (onClick)="toggleHistoryDialog(true)"

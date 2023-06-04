@@ -1,10 +1,12 @@
-<div class="honey-list">
-  <p class="honey-list__header">{{ "Driver licenses" }}</p>
+<div *ngIf="!state.isLoading" class="honey-list">
+  <div class="honey-list__header">{{ "Driver licenses" }}</div>
   <div *ngFor="let licence of licenses$ | async" class="honey-list__items">
     <app-honey-item
       [licence]="licence"
       (licenseDeleted)="handleDeleteLicense($event)"
     ></app-honey-item>
   </div>
-  <app-honey-item></app-honey-item>
+</div>
+<div *ngIf="state.isLoading" class="honey-list__spinner">
+  <p-progressSpinner strokeWidth="5" fill="var(--surface-ground)" animationDuration="1.5s"></p-progressSpinner>
 </div>

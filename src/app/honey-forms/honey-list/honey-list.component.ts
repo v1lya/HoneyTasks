@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HoneyFormsService } from '../honey-forms.service';
 import { IDoc } from '../models';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import {finalize, Observable, Subject, takeUntil} from 'rxjs';
+import {HoneyStateService} from "../../honey-state.service";
 
 @Component({
   selector: 'app-honey-list',
@@ -12,12 +13,14 @@ export class HoneyListComponent implements OnInit, OnDestroy {
   licenses$!: Observable<IDoc[]>;
   private unsubscribe$ = new Subject<void>();
 
-  constructor(public honeyFormsService: HoneyFormsService) {}
+  constructor(public honeyFormsService: HoneyFormsService, public state: HoneyStateService) {}
 
   ngOnInit(): void {
-    this.licenses$ = this.honeyFormsService.listChanged.pipe(
-      takeUntil(this.unsubscribe$)
-    );
+    this.state.isLoading = true;
+    setTimeout(() => {
+      this.licenses$ = this.honeyFormsService.listChanged.pipe(takeUntil(this.unsubscribe$));
+      this.state.isLoading = false;
+    }, 3000);
   }
 
   handleDeleteLicense(id: number) {

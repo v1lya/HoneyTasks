@@ -11,14 +11,14 @@
           {{ "Expiration date: "
           }}{{ licence.expirationDate | date : "dd/MM/yyyy" }}
         </div>
-        <div>{{ "Description: " }}{{ licence.description }}</div>
+        <div class="honey-item__content__texts__description">{{ "Description: " }}{{ licence.description }}</div>
       </div>
     </div>
     <div class="honey-item__button">
       <p-button
         label="{{ 'Delete' }}"
         icon="pi pi-trash"
-        styleClass="p-button-secondary"
+        styleClass="p-button-sm p-button-secondary"
         (onClick)="deleteLicence()"
       ></p-button>
     </div>

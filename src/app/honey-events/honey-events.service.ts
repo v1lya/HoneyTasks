@@ -4,6 +4,6 @@ import { ReplaySubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class HoneySubjectsService {
+export class HoneyEventsService {
   buttonClicked = new ReplaySubject<number>(5);
 }

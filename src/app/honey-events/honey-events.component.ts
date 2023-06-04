@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-honey-subjects',
-  templateUrl: './honey-subjects.component.html',
-  styleUrls: ['./honey-subjects.component.scss'],
+  selector: 'app-honey-events',
+  templateUrl: './honey-events.component.html',
+  styleUrls: ['./honey-events.component.scss'],
 })
-export class HoneySubjectsComponent {
+export class HoneyEventsComponent {
   isHistoryDialogOpened = false;
 
   constructor() {}

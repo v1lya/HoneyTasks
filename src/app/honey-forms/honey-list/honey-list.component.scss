@@ -1,6 +1,7 @@
 .honey-list {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 
   &__header {
     display: flex;
@@ -13,6 +14,22 @@
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+  }
+
+  &__spinner {
+    ::ng-deep .p-progress-spinner {
+      display: flex;
+      width: 70px;
+      height: 70px;
+      margin-top: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .honey-list {
+    &__header {
+      margin-top: 10px;
+    }
   }
 }
