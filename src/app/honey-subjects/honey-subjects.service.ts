@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
-import {ReplaySubject} from "rxjs";
+import { Injectable } from '@angular/core';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class HoneySubjectsService {
   buttonClicked = new ReplaySubject<number>(5);

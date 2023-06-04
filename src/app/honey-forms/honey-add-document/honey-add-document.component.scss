@@ -1,0 +1,27 @@
+.add-document {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 30px 50px;
+  width: 100%;
+
+  &__input {
+    display: flex;
+    justify-content: space-between;
+
+    &__label {
+      width: 150px;
+      align-self: center;
+    }
+
+    &__textarea {
+      width: 236px;
+    }
+  }
+}
+
+p-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+}

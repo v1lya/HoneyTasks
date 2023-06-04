@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HoneyUploaderComponent } from './honey-uploader.component';
+import { HoneyItemComponent } from './honey-item.component';
 
-describe('HoneyUploaderComponent', () => {
-  let component: HoneyUploaderComponent;
-  let fixture: ComponentFixture<HoneyUploaderComponent>;
+describe('HoneyItemComponent', () => {
+  let component: HoneyItemComponent;
+  let fixture: ComponentFixture<HoneyItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HoneyUploaderComponent],
+      declarations: [HoneyItemComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HoneyUploaderComponent);
+    fixture = TestBed.createComponent(HoneyItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

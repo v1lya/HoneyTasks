@@ -1,18 +1,36 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {HoneySubjectsComponent} from "./honey-subjects/honey-subjects.component";
-import {HoneyFormsComponent} from "./honey-forms/honey-forms.component";
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/main', pathMatch: "full"},
-  {path: 'main', component: HoneySubjectsComponent},
-  {path: 'events', component: HoneySubjectsComponent},
-  {path: 'forms', component: HoneyFormsComponent},
-  {path: '**', redirectTo: '/main'}
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  {
+    path: 'main',
+    loadChildren: () =>
+      import('./honey-subjects/honey-subjects.module').then(
+        (m) => m.HoneySubjectsModule
+      ),
+  },
+  {
+    path: 'events',
+    loadChildren: () =>
+      import('./honey-subjects/honey-subjects.module').then(
+        (m) => m.HoneySubjectsModule
+      ),
+  },
+  {
+    path: 'forms',
+    loadChildren: () =>
+      import('./honey-forms/honey-forms.module').then(
+        (m) => m.HoneyFormsModule
+      ),
+  },
+  { path: '**', redirectTo: '/main' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

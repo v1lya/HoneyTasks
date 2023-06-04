@@ -8,9 +8,8 @@ describe('HoneyDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HoneyDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [HoneyDialogComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HoneyDialogComponent);
     component = fixture.componentInstance;
