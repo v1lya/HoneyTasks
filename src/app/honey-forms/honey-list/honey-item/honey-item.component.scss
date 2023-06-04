@@ -6,20 +6,21 @@
   &__content {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
 
     &__copy {
-      width: 40px;
-      height: 40px;
+      width: 100px;
+      height: 100px;
     }
 
     &__texts {
       display: flex;
       flex-direction: column;
       gap: 5px;
+      font-size: 20px;
 
       &__description {
-        max-width: 113px;
+        max-width: 300px;
         text-overflow: ellipsis;
         overflow: hidden;
       }
@@ -28,5 +29,36 @@
 
   &__button {
     margin-left: auto;
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .honey-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &__content {
+      gap: 15px;
+
+      &__copy {
+        width: 60px;
+        height: 60px;
+      }
+
+      &__texts {
+        font-size: 16px;
+
+        &__description {
+          max-width: 113px;
+        }
+      }
+    }
+
+    &__button {
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
 }
