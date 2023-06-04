@@ -2,7 +2,7 @@
   <div class="honey-list__header">{{ "Driver licenses" }}</div>
   <div *ngFor="let licence of licenses$ | async" class="honey-list__items">
     <app-honey-item
-      [licence]="licence"
+      [license]="licence"
       (licenseDeleted)="handleDeleteLicense($event)"
     ></app-honey-item>
   </div>

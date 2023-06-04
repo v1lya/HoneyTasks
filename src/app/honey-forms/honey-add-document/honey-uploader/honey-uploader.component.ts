@@ -25,7 +25,7 @@ export class HoneyUploaderComponent implements ControlValueAccessor, OnDestroy {
 
   imageURL = '';
   fileName = '';
-  acceptedTypes = 'image/*';
+  acceptedTypes = 'image/*, .pdf';
 
   onChange = (img: IImage) => {};
   onTouch = () => {};

@@ -7,10 +7,6 @@ import {IDoc} from '../../models';
   styleUrls: ['./honey-item.component.scss'],
 })
 export class HoneyItemComponent {
-  @Input() licence!: IDoc;
+  @Input() license!: IDoc;
   @Output() licenseDeleted = new EventEmitter<number>();
-
-  deleteLicence() {
-    this.licenseDeleted.emit(this.licence.id);
-  }
 }

@@ -1,12 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {
-  UntypedFormControl,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
-import { HoneyStateService } from '../../honey-state.service';
-import { IDoc, IImage } from '../models';
-import { HoneyFormsService } from '../honey-forms.service';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {UntypedFormControl, UntypedFormGroup, Validators,} from '@angular/forms';
+import {HoneyStateService} from '../../honey-state.service';
+import {IDoc, IImage} from '../models';
+import {HoneyFormsService} from '../honey-forms.service';
+
+export const PDF_EXTENSION = 'pdf';
+export const PDF_IMG_PATH = './assets/pdf.png';
 
 @Component({
   selector: 'app-honey-add-document',
@@ -21,19 +20,23 @@ export class HoneyAddDocumentComponent implements OnInit {
 
   constructor(
     public state: HoneyStateService,
-    private honeyFormsService: HoneyFormsService
-  ) {}
+    private honeyFormsService: HoneyFormsService,
+  ) {
+  }
 
   ngOnInit(): void {
     this.initForm();
     this.initCalendar();
   }
 
-  handleSubmit() {
+  handleSubmit(): void {
     const value: Partial<IDoc> = this.uploadForm.value;
     const license: IDoc = {
       id: Date.now(),
-      licenseCopy: value.licenseCopy as IImage,
+      licenseCopy: {
+        ...value.licenseCopy as IImage,
+        content: this.getContent(value.licenseCopy as IImage),
+      },
       expirationDate: value.expirationDate as Date,
       description: value.description as string,
     };
@@ -42,7 +45,7 @@ export class HoneyAddDocumentComponent implements OnInit {
     setTimeout(() => {
       this.honeyFormsService.addLicence(license);
       this.state.isLoading = false;
-    }, 3000);
+    }, 2000);
 
     this.dialogClosed.emit();
   }
@@ -66,5 +69,10 @@ export class HoneyAddDocumentComponent implements OnInit {
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
     this.minExpirationDate = tomorrow;
+  }
+
+  private getContent(licenseCopy: IImage): string {
+    const extension = licenseCopy?.fileType?.split('/').pop();
+    return extension === PDF_EXTENSION ? PDF_IMG_PATH : licenseCopy.content;
   }
 }
