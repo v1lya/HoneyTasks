@@ -8,9 +8,8 @@ describe('HoneyAddDocumentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HoneyAddDocumentComponent ]
-    })
-    .compileComponents();
+      declarations: [HoneyAddDocumentComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HoneyAddDocumentComponent);
     component = fixture.componentInstance;

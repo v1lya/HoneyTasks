@@ -1,6 +1,12 @@
-import {Component, EventEmitter, forwardRef, OnDestroy, Output} from '@angular/core';
-import {IImage} from '../../models';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {
+  Component,
+  EventEmitter,
+  forwardRef,
+  OnDestroy,
+  Output,
+} from '@angular/core';
+import { IImage } from '../../models';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-honey-uploader',
@@ -24,11 +30,9 @@ export class HoneyUploaderComponent implements ControlValueAccessor, OnDestroy {
   onChange = (img: IImage) => {};
   onTouch = () => {};
 
-  constructor() {
-  }
+  constructor() {}
 
-  writeValue(img: IImage): void {
-  }
+  writeValue(img: IImage): void {}
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -56,13 +60,13 @@ export class HoneyUploaderComponent implements ControlValueAccessor, OnDestroy {
           content: reader.result,
           fileName: file.name,
           fileType: file.type,
-          fileSize: file.size
-        }
+          fileSize: file.size,
+        };
         this.imageURL = img.content;
         this.fileName = img.fileName;
         this.onChange(img);
       }
-    }
+    };
   }
 
   private resetImageData(): void {

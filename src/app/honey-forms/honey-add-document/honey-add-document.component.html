@@ -2,25 +2,52 @@
   <app-honey-dialog
     [visible]="isAddDocumentDialogOpened"
     [headerText]="'Add your license'"
-    (dialogClosed)="dialogClosed.emit()">
+    (dialogClosed)="dialogClosed.emit()"
+  >
     <ng-container *ngTemplateOutlet="uploader"></ng-container>
   </app-honey-dialog>
 
   <ng-template #uploader>
-    <form [formGroup]="uploadForm">
-      <div class="">
-        <label for="expirationDate">{{'Expiration date'}}</label>
-        <input [formControlName]="'expirationDate'" id="expirationDate">
+    <form class="add-document" [formGroup]="uploadForm">
+      <div class="add-document__input">
+        <label class="add-document__input__label">{{
+          "Expiration date"
+        }}</label>
+        <p-calendar
+          [formControlName]="'expirationDate'"
+          [showIcon]="true"
+          [minDate]="minExpirationDate"
+          [appendTo]="state.overlayContainer"
+          dateFormat="dd.mm.yy"
+        ></p-calendar>
       </div>
-      <div>
-        <label for="description">{{'Description'}}</label>
-        <textarea [formControlName]="'description'" id="description"></textarea>
+      <div class="add-document__input">
+        <label class="add-document__input__label" for="description">{{
+          "Description"
+        }}</label>
+        <textarea
+          class="add-document__input__textarea"
+          pInputTextarea
+          id="description"
+          rows="2"
+          [formControlName]="'description'"
+        ></textarea>
       </div>
-      <app-honey-uploader [formControlName]="'license'"></app-honey-uploader>
+      <div class="add-document__input">
+        <label class="add-document__input__label" for="description">{{
+          "License copy"
+        }}</label>
+        <app-honey-uploader
+          [formControlName]="'licenseCopy'"
+        ></app-honey-uploader>
+      </div>
     </form>
-    <p-button [label]="'Submit'"
-              [disabled]="uploadForm.invalid"
-              (onClick)="handleSubmit()"
-              type="submit"></p-button>
+    <p-button
+      [label]="'Submit'"
+      [styleClass]="'p-button-sm submit-button'"
+      [disabled]="uploadForm.invalid"
+      (onClick)="handleSubmit()"
+      type="submit"
+    ></p-button>
   </ng-template>
 </ng-container>

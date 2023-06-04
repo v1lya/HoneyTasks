@@ -3,10 +3,22 @@
     *ngIf="imageURL"
     [src]="'assets/checked_green.ico'"
     alt=""
-    class="image-uploader__image-file"/>
-  <input [hidden]="true" (change)="handleSelectedFile($event)" [accept]="acceptedTypes" id="file-input" type="file" />
-  <input pInputText readonly [ngModel]="fileName" />
-  <p-button [styleClass]="'cyb-button--text-button'" type="button">
-    <label for="file-input">{{ 'Browse' }}</label>
+    class="image-uploader__image-file"
+  />
+  <input
+    [hidden]="true"
+    (change)="handleSelectedFile($event)"
+    [accept]="acceptedTypes"
+    id="file-input"
+    type="file"
+  />
+  <input
+    class="image-uploader__filename"
+    pInputText
+    readonly
+    [ngModel]="fileName"
+  />
+  <p-button [styleClass]="'p-button-sm'" type="button">
+    <label for="file-input">{{ "Browse" }}</label>
   </p-button>
 </div>

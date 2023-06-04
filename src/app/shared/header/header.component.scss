@@ -2,6 +2,11 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px 10px;
+  border-bottom: 1px solid #ffd54f;
+  box-shadow: 0 1px #ffd54f;
 
   &__brand {
     display: flex;
@@ -9,20 +14,23 @@
     align-items: center;
 
     &__link {
-      padding: 0 1.5rem;
-      //color: white;
-      font-size: 1.5em;
+      color: #ffd54f;
+      font-size: 1.3em;
       text-decoration: none;
     }
   }
 
   &__items {
     display: flex;
+    gap: 30px;
     margin-left: auto;
+    color: #ffd54f;
 
     &__item {
-      font-size: 1.5em;
+      font-size: 1.3em;
       font-weight: 400;
+      color: #ffd54f;
+      text-decoration: none;
     }
   }
 }

@@ -1,11 +1,14 @@
 .image-uploader {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 10px;
   border: none;
+  width: 100%;
 
   &__image-file {
     width: 25px;
     height: 25px;
+    align-self: center;
   }
 
   input {
@@ -13,6 +16,7 @@
     text-overflow: ellipsis;
     padding-left: 0;
     background-color: transparent;
+    width: 140px;
   }
 
   p-button {
@@ -22,8 +26,4 @@
   label {
     cursor: pointer;
   }
-
-  //::ng-deep span.p-button-text.p-clickable {
-  //  display: none;
-  //}
 }

@@ -1,13 +1,18 @@
 <div class="honey-forms">
-  <p>{{'Uploaded documents list'}}</p>
-  <p-button [label]="'Add license'" (onClick)="toggleAddDocumentDialog(true)"></p-button>
-</div>
-<div>
-  <p-card></p-card>
+  <div class="honey-forms__header">
+    <p-button
+      [styleClass]="'p-button-sm'"
+      [label]="'Add license'"
+      (onClick)="toggleAddDocumentDialog(true)"
+    ></p-button>
+  </div>
+  <div>
+    <app-honey-list></app-honey-list>
+  </div>
 </div>
 
 <app-honey-add-document
   *ngIf="isAddDocumentDialogOpened"
   [isAddDocumentDialogOpened]="isAddDocumentDialogOpened"
-  (dialogClosed)="toggleAddDocumentDialog(false)"></app-honey-add-document>
-
+  (dialogClosed)="toggleAddDocumentDialog(false)"
+></app-honey-add-document>

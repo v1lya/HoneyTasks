@@ -1,18 +1,15 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {HoneySubjectsModule} from './honey-subjects/honey-subjects.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {PrimeNgModule} from "./shared/prime-ng.module";
-import {HoneyFormsModule} from "./honey-forms/honey-forms.module";
-import {HeaderComponent} from "./shared/header/header.component";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HoneySubjectsModule } from './honey-subjects/honey-subjects.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PrimeNgModule } from './shared/prime-ng.module';
+import { HoneyFormsModule } from './honey-forms/honey-forms.module';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -22,6 +19,6 @@ import {HeaderComponent} from "./shared/header/header.component";
     HoneyFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

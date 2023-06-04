@@ -1,6 +1,7 @@
 export interface IDoc {
-  docType: string;
-  expDate: Date;
+  id: number;
+  licenseCopy: IImage;
+  expirationDate: Date;
   description: string;
 }
 

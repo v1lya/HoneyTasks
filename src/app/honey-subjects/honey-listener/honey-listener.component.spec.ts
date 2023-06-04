@@ -8,9 +8,8 @@ describe('HoneyListenerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HoneyListenerComponent ]
-    })
-    .compileComponents();
+      declarations: [HoneyListenerComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HoneyListenerComponent);
     component = fixture.componentInstance;
