@@ -20,7 +20,7 @@ export class HoneyListComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.licenses$ = this.honeyFormsService.listChanged.pipe(takeUntil(this.unsubscribe$));
       this.state.isLoading = false;
-    }, 3000);
+    }, 2000);
   }
 
   handleDeleteLicense(id: number) {

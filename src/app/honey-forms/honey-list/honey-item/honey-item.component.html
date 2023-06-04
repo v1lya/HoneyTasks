@@ -1,17 +1,17 @@
-<p-card *ngIf="licence" header="{{ 'Driver licence' }}">
+<p-card *ngIf="license" header="{{ 'Driver license' }}">
   <div class="honey-item">
     <div class="honey-item__content">
       <img
         class="honey-item__content__copy"
-        src="{{ licence.licenseCopy.content }}"
+        src="{{ license.licenseCopy.content }}"
         alt=""
       />
       <div class="honey-item__content__texts">
         <div>
           {{ "Expiration date: "
-          }}{{ licence.expirationDate | date : "dd/MM/yyyy" }}
+          }}{{ license.expirationDate | date : "dd/MM/yyyy" }}
         </div>
-        <div class="honey-item__content__texts__description">{{ "Description: " }}{{ licence.description }}</div>
+        <div class="honey-item__content__texts__description">{{ "Description: " }}{{ license.description }}</div>
       </div>
     </div>
     <div class="honey-item__button">
@@ -19,7 +19,7 @@
         label="{{ 'Delete' }}"
         icon="pi pi-trash"
         styleClass="p-button-sm p-button-secondary"
-        (onClick)="deleteLicence()"
+        (onClick)="licenseDeleted.emit(license.id)"
       ></p-button>
     </div>
   </div>
