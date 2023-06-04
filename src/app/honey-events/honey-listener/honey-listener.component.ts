@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HoneySubjectsService } from '../honey-subjects.service';
+import {Component, Input, OnInit} from '@angular/core';
+import { HoneyEventsService } from '../honey-events.service';
 import { Observable, scan, Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -8,10 +8,11 @@ import { Observable, scan, Subject, takeUntil } from 'rxjs';
   styleUrls: ['./honey-listener.component.scss'],
 })
 export class HoneyListenerComponent implements OnInit {
+  @Input() isHistoryDialogOpened = false;
   result$ = new Observable<number[]>();
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private subjectsService: HoneySubjectsService) {}
+  constructor(private subjectsService: HoneyEventsService) {}
 
   ngOnInit(): void {
     this.result$ = this.subjectsService.buttonClicked.pipe(

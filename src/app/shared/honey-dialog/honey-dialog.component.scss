@@ -3,3 +3,9 @@ p-button {
   bottom: 32px;
   left: 54px;
 }
+
+@media screen and (max-width: 600px) {
+  p-button {
+    left: 26px;
+  }
+}

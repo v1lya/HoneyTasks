@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { HoneySubjectsService } from '../honey-subjects.service';
+import { HoneyEventsService } from '../honey-events.service';
 import { Observable, scan, Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ export class HoneyHistoryComponent implements OnInit, OnDestroy {
   history$ = new Observable<number[]>();
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private subjectsService: HoneySubjectsService) {}
+  constructor(private subjectsService: HoneyEventsService) {}
 
   ngOnInit(): void {
     this.history$ = this.subjectsService.buttonClicked.pipe(

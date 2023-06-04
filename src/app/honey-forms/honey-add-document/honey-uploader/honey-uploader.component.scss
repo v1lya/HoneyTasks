@@ -27,3 +27,13 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .image-uploader {
+    gap: 25px;
+
+    input {
+      display: none;
+    }
+  }
+}

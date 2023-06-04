@@ -25,3 +25,13 @@ p-button {
   justify-content: flex-end;
   margin-right: 30px;
 }
+
+@media screen and (max-width: 600px) {
+  .add-document {
+    padding: 0 0 50px 0;
+  }
+
+  p-button {
+    margin-right: 0;
+  }
+}

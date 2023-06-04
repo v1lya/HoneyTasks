@@ -37,7 +37,13 @@ export class HoneyAddDocumentComponent implements OnInit {
       expirationDate: value.expirationDate as Date,
       description: value.description as string,
     };
-    this.honeyFormsService.addLicence(license);
+    this.state.isLoading = true;
+
+    setTimeout(() => {
+      this.honeyFormsService.addLicence(license);
+      this.state.isLoading = false;
+    }, 3000);
+
     this.dialogClosed.emit();
   }
 

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HoneySubjectsModule } from './honey-subjects/honey-subjects.module';
+import { HoneyEventsModule } from './honey-events/honey-events.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PrimeNgModule } from './shared/prime-ng.module';
 import { HoneyFormsModule } from './honey-forms/honey-forms.module';
@@ -15,7 +15,7 @@ import { HeaderComponent } from './shared/header/header.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     PrimeNgModule,
-    HoneySubjectsModule,
+    HoneyEventsModule,
     HoneyFormsModule,
   ],
   providers: [],

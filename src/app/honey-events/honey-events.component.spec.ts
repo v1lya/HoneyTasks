@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HoneySubjectsComponent } from './honey-subjects.component';
+import { HoneyEventsComponent } from './honey-events.component';
 
 describe('HoneySubjectsComponent', () => {
-  let component: HoneySubjectsComponent;
-  let fixture: ComponentFixture<HoneySubjectsComponent>;
+  let component: HoneyEventsComponent;
+  let fixture: ComponentFixture<HoneyEventsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HoneySubjectsComponent],
+      declarations: [HoneyEventsComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HoneySubjectsComponent);
+    fixture = TestBed.createComponent(HoneyEventsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
